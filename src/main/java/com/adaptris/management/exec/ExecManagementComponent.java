@@ -23,27 +23,18 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.adaptris.core.management.ManagementComponent;
+import com.adaptris.core.management.MgmtComponentImpl;
 import com.adaptris.core.util.ManagedThreadFactory;
 import com.adaptris.util.TimeInterval;
 
-public class ExecManagementComponent implements ManagementComponent {
+public class ExecManagementComponent extends MgmtComponentImpl {
   private static final TimeInterval SHUTDOWN_TIMEOUT_MS = new TimeInterval(60L, TimeUnit.SECONDS);
-  private transient Logger log = LoggerFactory.getLogger(this.getClass().getName());
 
   private transient List<ExecConfig> config;
   private transient Set<ExecWrapper> wrappers = new HashSet<>();
   private transient ScheduledExecutorService executor;
 
   public ExecManagementComponent() {
-  }
-
-  @Override
-  public void setClassLoader(ClassLoader classLoader) {
-    // no-op
   }
 
   @Override
