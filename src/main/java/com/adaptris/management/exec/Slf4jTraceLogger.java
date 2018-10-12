@@ -32,7 +32,7 @@ public class Slf4jTraceLogger extends LogOutputStream {
   }
 
   public static <T extends DefaultExecutor> T attach(T executor, Logger log) {
-    Slf4jTraceLogger logger = new Slf4jTraceLogger(log);
+    Slf4jTraceLogger logger = new Slf4jTraceLogger(log); // lgtm [java/output-resource-leak]
     PumpStreamHandler pump = new ManagedPumpStreamHandler(logger);
     executor.setStreamHandler(pump);
     return (T) executor;
