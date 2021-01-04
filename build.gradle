@@ -199,6 +199,8 @@ publishing {
         properties.appendNode("target", "3.8.2+")
         properties.appendNode("license", "false")
         properties.appendNode("tags", "exec,executable,management")
+        properties.appendNode("repository", "https://github.com/adaptris/interlok-exec")
+        properties.appendNode("readme", "https://github.com/adaptris/interlok-exec/raw/develop/README.md")
       }
     }
   }
