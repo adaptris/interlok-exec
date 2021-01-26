@@ -1,5 +1,5 @@
-# interlok-exec 
-[![GitHub tag](https://img.shields.io/github/tag/adaptris/interlok-exec.svg)](https://github.com/adaptris/interlok-exec/tags) [![Build Status](https://travis-ci.org/adaptris/interlok-exec.svg?branch=develop)](https://travis-ci.org/adaptris/interlok-exec) [![CircleCI](https://circleci.com/gh/adaptris/interlok-exec.svg?style=svg)](https://circleci.com/gh/adaptris/interlok-exec) [![codecov](https://codecov.io/gh/adaptris/interlok-exec/branch/develop/graph/badge.svg)](https://codecov.io/gh/adaptris/interlok-exec) ![license](https://img.shields.io/github/license/adaptris/interlok-exec.svg) [![Total alerts](https://img.shields.io/lgtm/alerts/g/adaptris/interlok-exec.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/adaptris/interlok-exec/alerts/) [![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/adaptris/interlok-exec.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/adaptris/interlok-exec/context:java)
+# interlok-exec
+[![GitHub tag](https://img.shields.io/github/tag/adaptris/interlok-exec.svg)](https://github.com/adaptris/interlok-exec/tags) [![codecov](https://codecov.io/gh/adaptris/interlok-exec/branch/develop/graph/badge.svg)](https://codecov.io/gh/adaptris/interlok-exec) ![license](https://img.shields.io/github/license/adaptris/interlok-exec.svg) [![Total alerts](https://img.shields.io/lgtm/alerts/g/adaptris/interlok-exec.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/adaptris/interlok-exec/alerts/) [![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/adaptris/interlok-exec.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/adaptris/interlok-exec/context:java)
 
 `musical-goggles` was the suggested project name
 
@@ -30,7 +30,7 @@ exec.tomcat.process.debug=true
 In this instance there are two executables configured so...
 
 * Upon start we execute `catalina.sh start` and `activemq.sh start` respectively. The working directories for those processes are `/home/vagrant/tomcat` and `/home/vagrant/activemq` respectively.
-  * Any output to standard error/output will be redirected at TRACE level to the standard interlok logfile 
+  * Any output to standard error/output will be redirected at TRACE level to the standard interlok logfile
 * Every 10 seconds, we check the process to see if they are alive
   * Because process.debug is true, then you will get logging in any configured log file at trace level for the process monitoring
   * If the process is dead, than we attempt to restart the executable.
