@@ -1,5 +1,12 @@
 # interlok-exec
-[![GitHub tag](https://img.shields.io/github/tag/adaptris/interlok-exec.svg)](https://github.com/adaptris/interlok-exec/tags) [![codecov](https://codecov.io/gh/adaptris/interlok-exec/branch/develop/graph/badge.svg)](https://codecov.io/gh/adaptris/interlok-exec) ![license](https://img.shields.io/github/license/adaptris/interlok-exec.svg) [![Total alerts](https://img.shields.io/lgtm/alerts/g/adaptris/interlok-exec.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/adaptris/interlok-exec/alerts/) [![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/adaptris/interlok-exec.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/adaptris/interlok-exec/context:java)
+
+[![GitHub tag](https://img.shields.io/github/tag/adaptris/interlok-exec.svg)](https://github.com/adaptris/interlok-exec/tags)
+[![license](https://img.shields.io/github/license/adaptris/interlok-exec.svg)](https://github.com/adaptris/interlok-exec/blob/develop/LICENSE)
+[![Actions Status](https://github.com/adaptris/interlok-exec/actions/workflows/gradle-publish.yml/badge.svg)](https://github.com/adaptris/interlok-exec/actions)
+[![codecov](https://codecov.io/gh/adaptris/interlok-exec/branch/develop/graph/badge.svg)](https://codecov.io/gh/adaptris/interlok-exec)
+[![CodeQL](https://github.com/adaptris/interlok-exec/workflows/CodeQL/badge.svg)](https://github.com/adaptris/interlok-exec/security/code-scanning)
+[![Known Vulnerabilities](https://snyk.io/test/github/adaptris/interlok-exec/badge.svg?targetFile=build.gradle)](https://snyk.io/test/github/adaptris/interlok-exec?targetFile=build.gradle)
+[![Closed PRs](https://img.shields.io/github/issues-pr-closed/adaptris/interlok-exec)](https://github.com/adaptris/interlok-exec/pulls?q=is%3Apr+is%3Aclosed)
 
 `musical-goggles` was the suggested project name
 
