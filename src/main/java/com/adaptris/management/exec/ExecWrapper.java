@@ -29,7 +29,7 @@ public class ExecWrapper {
 
   private transient ExecConfig config;
   private transient ScheduledExecutorService executor;
-  private transient Set<ScheduledFuture> monitors = Collections.newSetFromMap(new WeakHashMap<ScheduledFuture, Boolean>());
+  private transient Set<ScheduledFuture<?>> monitors = Collections.newSetFromMap(new WeakHashMap<ScheduledFuture<?>, Boolean>());
   private transient DestroyingProcessMonitor monitor = new DestroyingProcessMonitor();
   private transient AtomicBoolean started = new AtomicBoolean(false);
 
@@ -104,7 +104,7 @@ public class ExecWrapper {
     private ProcessRestarter restarter;
 
     public ProcessMonitor(Process p) {
-      this.process = p;
+      process = p;
       restarter = new ProcessRestarter(this);
     }
 
@@ -154,7 +154,7 @@ public class ExecWrapper {
     @Override
     public boolean add(Process process) {
       // Schedule a monitor
-      boolean added =  processes.add(Args.notNull(process, "process"));
+      boolean added = processes.add(Args.notNull(process, "process"));
       ProcessMonitor monitor = new ProcessMonitor(process);
       debugLogging("[{}] adding a new monitor : {}", config.getIdentifier(), monitor);
       scheduleNextRun(monitor);
@@ -181,4 +181,5 @@ public class ExecWrapper {
       processes.clear();
     }
   }
+
 }
