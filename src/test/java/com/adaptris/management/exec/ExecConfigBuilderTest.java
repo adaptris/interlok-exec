@@ -9,15 +9,15 @@ import static com.adaptris.management.exec.ExecConfigBuilder.EXEC_STOP_COMMAND;
 import static com.adaptris.management.exec.ExecConfigBuilder.EXEC_STOP_WAIT;
 import static com.adaptris.management.exec.ExecConfigBuilder.EXEC_VERBOSE;
 import static com.adaptris.management.exec.ExecConfigBuilder.EXEC_WORKING_DIR;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.ThreadLocalRandom;
 
 import org.apache.commons.lang3.BooleanUtils;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import com.adaptris.util.GuidGenerator;
 
@@ -25,35 +25,24 @@ public class ExecConfigBuilderTest {
 
   private static final GuidGenerator guid = new GuidGenerator();
 
-  private static final String[] CONFIG_PROPERTIES = {
-      EXEC_START_COMMAND,EXEC_WORKING_DIR,EXEC_STOP_COMMAND,EXEC_STOP_WAIT,EXEC_MONITOR_MS,EXEC_VERBOSE
-  };
+  private static final String[] CONFIG_PROPERTIES = { EXEC_START_COMMAND, EXEC_WORKING_DIR, EXEC_STOP_COMMAND, EXEC_STOP_WAIT,
+      EXEC_MONITOR_MS, EXEC_VERBOSE };
 
-  private static final ValueGenerator[] GENERATORS = {
-      () -> {
-        return guid.getUUID();
-      },
-      () -> {
-        return guid.getUUID();
-      },
-      () -> {
-        return guid.getUUID();
-      },
-      () -> {
-        return String.valueOf(ThreadLocalRandom.current().nextLong());
-      },
-      () -> {
-        return String.valueOf(ThreadLocalRandom.current().nextLong());
-      },
-      () -> {
-        return BooleanUtils.toBooleanObject(ThreadLocalRandom.current().nextInt(2)).toString();
-      }
-  };
+  private static final ValueGenerator[] GENERATORS = { () -> {
+    return guid.getUUID();
+  }, () -> {
+    return guid.getUUID();
+  }, () -> {
+    return guid.getUUID();
+  }, () -> {
+    return String.valueOf(ThreadLocalRandom.current().nextLong());
+  }, () -> {
+    return String.valueOf(ThreadLocalRandom.current().nextLong());
+  }, () -> {
+    return BooleanUtils.toBooleanObject(ThreadLocalRandom.current().nextInt(2)).toString();
+  } };
 
-  private static final String[] IDENTIFIERS =
-  {
-      "hello", "goodbye"
-  };
+  private static final String[] IDENTIFIERS = { "hello", "goodbye" };
 
   @Test
   public void testBuild() throws Exception {
@@ -73,6 +62,7 @@ public class ExecConfigBuilderTest {
       assertNotNull(invokeGetter(c, m));
     }
   }
+
   private Properties createProperties() {
     Properties result = new Properties();
     for (String id : IDENTIFIERS) {
@@ -88,4 +78,5 @@ public class ExecConfigBuilderTest {
   private static interface ValueGenerator {
     String generate();
   }
+
 }

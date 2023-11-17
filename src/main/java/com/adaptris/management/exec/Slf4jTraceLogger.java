@@ -14,7 +14,7 @@ import com.adaptris.core.util.ManagedThreadFactory;
 
 /**
  * {@code LogOutputStream} implementation that logs to slf4j at {@code TRACE} level.
- * 
+ *
  *
  */
 public class Slf4jTraceLogger extends LogOutputStream {
@@ -35,7 +35,7 @@ public class Slf4jTraceLogger extends LogOutputStream {
     Slf4jTraceLogger logger = new Slf4jTraceLogger(log); // lgtm [java/output-resource-leak]
     PumpStreamHandler pump = new ManagedPumpStreamHandler(logger);
     executor.setStreamHandler(pump);
-    return (T) executor;
+    return executor;
   }
 
   static class ManagedPumpStreamHandler extends PumpStreamHandler {
@@ -44,6 +44,7 @@ public class Slf4jTraceLogger extends LogOutputStream {
       super(outAndErr, outAndErr);
     }
 
+    @Override
     protected Thread createPump(final InputStream is, final OutputStream os, final boolean closeWhenExhausted) {
       String name = Thread.currentThread().getName();
       final Thread result = MTF.newThread(new StreamPumper(is, os, closeWhenExhausted));
@@ -52,4 +53,5 @@ public class Slf4jTraceLogger extends LogOutputStream {
       return result;
     }
   }
+
 }
