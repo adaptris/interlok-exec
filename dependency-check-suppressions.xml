@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+  <suppress>
+    <notes><![CDATA[
+      CVE-2026-123356 is accepted for jetty-server 10.0.26 in interlok-exec until a patched
+      release in the same major version is available without requiring a Java upgrade.
+    ]]></notes>
+    <packageUrl regex="true">^pkg:maven/org\.eclipse\.jetty/jetty-server@10\.0\.26$</packageUrl>
+    <cve>CVE-2026-123356</cve>
+  </suppress>
+</suppressions>
